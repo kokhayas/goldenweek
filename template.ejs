@@ -8,16 +8,30 @@
 </head>
 <body>
 	<div>
-		<% for (let i=0; i<lists.length; i++) { %>
-		<%= lists[i].name %>
-		<a href="rewrite?index=<%= i %>"><%= lists[i].message %>
-		</a>
+		<table>
+		<% for (let i=0; i<datas.length; i++) { %>
+			<tr>
+				<td>
+					<a href="edit?id=<%= datas[i].id %>">
+						<%= datas[i].name %>
+					</a>
+				</td>
+				<td>
+					<a href="edit?id=<%= datas[i].id %>">
+						<%= datas[i].message %>
+					</a>
+				</td>
+			</tr>
 		<% } %>
+		</table>
 	</ul>
-		<form method="post" action="/send">
+		<form method="post" action="/send?edit=false">
 			<input name="name" />
 			<input name="message" />
 			<button>送信</button>
+		</form>
+		<form method="get" action="/reset">
+			<button>reset all</button>
 		</form>
 </body>
 </html>

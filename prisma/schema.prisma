@@ -10,9 +10,10 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Todo {
+model bulletin {
 	id Int @id @default(autoincrement())
 	name String
+	message String
 }
 
 
