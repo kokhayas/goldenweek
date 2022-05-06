@@ -1,24 +1,36 @@
 <!DOCTYPE html>
 <html lang="ja">
+	
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<title>ut.code(); reddit</title>
+	<link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+	<script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
+
 <body>
 	<div>
+		<img src="https://find-model.jp/insta-lab/wp-content/uploads/2021/12/sns-social-media-icons-1.jpg" style="height: 5rem">
+		<h3>ut.code();の新歓 ゴールデンウィーク企画お疲れ様でした!</h3>
 		<table>
 		<% for (let i=0; i<datas.length; i++) { %>
 			<tr>
-				<td>
-					<a href="edit?id=<%= datas[i].id %>">
+				<td style="width:fit-content">
+					<div>
 						<%= datas[i].name %>
-					</a>
+					</div>
 				</td>
-				<td>
-					<a href="edit?id=<%= datas[i].id %>">
+				<td style="width:fit-content">
+					<div style="font-size: 0.9rem">
 						<%= datas[i].message %>
+					<div>
+				</td>
+				<td style="width: fit-content;">
+					<a href="edit?id=<%= datas[i].id %>">
+						edit
 					</a>
 				</td>
 			</tr>
@@ -28,10 +40,17 @@
 		<form method="post" action="/send?edit=false">
 			<input name="name" />
 			<input name="message" />
-			<button>送信</button>
+			<button class="mdc-button foo-button">
+				<div class="mdc-button__ripple"></div>
+				<span class="mdc-button__label">送信</span>
+			</button>
 		</form>
+
 		<form method="get" action="/reset">
-			<button>reset all</button>
+			<button class="mdc-button foo-button">
+				<div class="mdc-button__ripple"></div>
+				<span class="mdc-button__label">reset all</span>
+			</button>
 		</form>
 </body>
 </html>
