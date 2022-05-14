@@ -1,4 +1,4 @@
-ut.code();のgoldenweek新歓企画の発展課題の参考解答
+
 
 RUN in terminal
 npm init
